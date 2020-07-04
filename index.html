@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/style.css">
+
+  <title>Laktinov frontend</title>
+</head>
+<body id="body">
+  <div class="menuButton__wrap">
+    <a class="menuButton ">
+      <div class="burger"></div>
+    </a>
+  </div>
+  <div class="modalMenu fadeOut">
+    <div class="modalMenu__inner">
+      <div class="modalMenu-wrapList">
+        <div class="modalMenu-wrapList__item" data-delay="0.4">
+          <a href="#" class="modalMenu-wrapList__link">Главная</a>
+          <hr class="modalMenu-wrapList__borderBottom">
+        </div>
+        <div class="modalMenu-wrapList__item" data-delay="0.5">
+          <a href="#" class="modalMenu-wrapList__link">Проекты</a>
+          <hr class="modalMenu-wrapList__borderBottom">
+        </div>
+        <div class="modalMenu-wrapList__item" data-delay="0.6">
+          <a href="#" class="modalMenu-wrapList__link">Обо мне</a>
+          <hr class="modalMenu-wrapList__borderBottom">
+        </div>
+        <div class="modalMenu-wrapList__item" data-delay="0.7">
+          <a href="#" class="modalMenu-wrapList__link">Услуги</a>
+          <hr class="modalMenu-wrapList__borderBottom">
+        </div>
+        <div class="modalMenu-wrapList__item" data-delay="0.8">
+          <a href="#" class="modalMenu-wrapList__link">Контакты</a>
+        </div>
+      </div>
+    </div>
+  </div><!-- /.modalMenu -->
+  <div class="first-screen">
+    <div class="fluid-container">
+        <header class="header">
+          <div class="logo">
+            <img class="logo__img" src="img/logo.png" alt="Laktionov frontend">
+            <span class="logo__text">LF</span>
+          </div>
+          <nav class="nav">
+            <a class="nav-link nav-link__active" href="#">
+              Главная
+              <svg class="nav-link__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>
+            </a>
+            <a class="nav-link" href="#">
+              Проекты
+              <svg class="nav-link__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>
+            </a>
+            <a class="nav-link" href="#">
+              Обо мне
+              <svg class="nav-link__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>
+            </a>
+            <a class="nav-link" href="#">
+              Услуги
+              <svg class="nav-link__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>
+            </a>
+            <a class="nav-link" href="#">
+              Контакты
+              <svg class="nav-link__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+              </svg>
+            </a>
+          </nav>
+        </header><!-- /.header -->
+        <div class="first-screen__inner">
+          <h1 class="first-screen-title">
+            <span class="first-screen-title__word1">
+              <span class="char1 delay animated fadeInLeft" data-delay="0.1">F</span>
+              <span class="char2 delay animated fadeInLeft" data-delay="0.2">R</span>
+              <span class="char3 delay animated fadeInLeft" data-delay="0.3">O</span>
+              <span class="char4 delay animated fadeInLeft" data-delay="0.4">N</span>
+              <span class="char5 delay animated fadeInLeft" data-delay="0.5">T</span>
+              <span class="char6 delay animated fadeInLeft" data-delay="0.6">-</span>
+              <span class="char7 delay animated fadeInLeft" data-delay="0.7">E</span>
+              <span class="char8 delay animated fadeInLeft" data-delay="0.8">N</span>
+              <span class="char9 delay animated fadeInLeft" data-delay="0.9">D</span>
+            </span>
+            <span class="first-screen-title__word2">
+              <span class="char1 delay  animated fadeInLeft" data-delay="1.0">Р</span>
+              <span class="char2 delay animated fadeInLeft" data-delay="1.1">А</span>
+              <span class="char3 delay animated fadeInLeft" data-delay="1.2">З</span>
+              <span class="char4 delay animated fadeInLeft" data-delay="1.3">Р</span>
+              <span class="char5 delay animated fadeInLeft" data-delay="1.4">А</span>
+              <span class="char6 delay animated fadeInLeft" data-delay="1.5">Б</span>
+              <span class="char7 delay animated fadeInLeft" data-delay="1.6">О</span>
+              <span class="char8 delay animated fadeInLeft" data-delay="1.7">Т</span>
+              <span class="char9 delay animated fadeInLeft" data-delay="1.8">Ч</span>
+              <span class="char9 delay animated fadeInLeft" data-delay="1.9">И</span>
+              <span class="char9 delay animated fadeInLeft" data-delay="2.0">К</span>
+            </span>
+            <span class="first-screen-title__word3 animated fadeInUp delay" data-delay="2.0">Данил Лактионов</span>
+          </h1><!-- /.first-screen-title -->
+          <a href="#" class="scroll-mouse__wrap">
+            <div class="scroll-mouse animScrollDown">
+              <div class="scroll-mouse__mBtn animScrollDown"></div>
+            </div>
+            <div class="scroll-mouse__arrowDown animScrollDown"></div>
+          </a>
+        </div><!-- /.first-screen-title -->
+    </div><!-- /.first-screen -->
+  </div>
+  <div class="container content">
+    <section class="section projects">
+      <h2 class="section-title projects__title">Проекты</h2>
+      <div class="projects-pointer">
+        <span class="projects-pointer__text">Наведи на меня</span>
+        <img class="projects-pointer__img" src="img/arrow.png" alt="стрелка arrow">
+      </div>
+      <div class="projects-blocks">
+        <div class="projects-blocks-smalls">
+          <a href="projects/sound38/index.html" class="projects__link">
+            <div class="projects-blocks-smalls-block project">
+              <img src="img/projects/sound38.jpg" alt="sound38 разработка верстка" class="projects-img">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Sound 38</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Лендинг для компании Sound 38</h3>
+                <span class="projects-info__desc">Sound 38 - компания по озвучке мероприятий и производству акустической техники. Адаптивный дизайн, работа с библиотекой jQuery и Bootstrap.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+          <a href="projects/skinali/index.html" class="projects__link">
+            <div class="projects-blocks-smalls-block project">
+              <img class="projects-img" src="img/projects/skinali.jpg" alt="фабрика скинали разработка верстка">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Фабрика Скинали</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Лендинг для компании Фабрика Скинали</h3>
+                <span class="projects-info__desc">Вёрстка лендинга с формой обратной связи, виджетом с контактами и мобильной версией.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+          <a href="projects/alijspress/index.html" class="projects__link">
+            <div class="projects-blocks-smalls-block project">
+              <img class="projects-img" src="img/projects/alijspress.jpg" alt="Алиэкспресс воркшоп вёрстка JavaScript">
+              <div class="projects-plate">
+                <span class="projects-plate__text">AliJSpress</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Курс повышения квалификации по JavaScript</h3>
+                <span class="projects-info__desc">Имитация работы Aliexpress. Реализация поиска товаров, категорий, корзины и списка желаемых товаров.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+          <a href="projects/aviasales/index.html" class="project__link">
+            <div class="projects-blocks-smalls-block project">
+              <img class="projects-img" src="img/projects/aviasales.jpg" alt="Aviasales верстка JavaScript API">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Aviasales</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Клон сервиса Aviasales</h3>
+                <span class="projects-info__desc">Написание упрощенного клона сервиса Aviasales в рамках повышения квалицикации по JavaScript. Работа с API, XMLHttpRequest и базой данных.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+          <a href="projects/deliveryfood/index.html" class="projects__link">
+            <div class="projects-blocks-smalls-block project project_lg">
+              <img class="projects-img" src="img/projects/delivery-food.jpg" alt="Delivery Food верстка JavaScript">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Delivery Food</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Сайт доставки еды Delivery Food</h3>
+                <span class="projects-info__desc">Разработка frontend части сайта для будущего проекта по доставке еды. Написание внешней логики сайта, карточек товаров и корзины.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+          <a href="projects/distance/index.html" class="projects__link">
+            <div class="projects-blocks-smalls-block project project_lg">
+              <img class="projects-img" src="img/projects/distance.jpg" alt="Distance Дистанция">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Distance</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Макет соц.сети "Дистанция"</h3>
+                <span class="projects-info__desc">Вёрстка дизайн-макета сайта соц.сети "Distance" в англоязычном варианте. Использование UI/UX элементов дизайна и работа с svg графикой.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+        </div><!-- /.projects-blocks-smalls -->
+        <a href="projects/deliveryfood/index.html" class="projects__link">
+          <div class="projects-blocks-big project">
+            <img class="projects-img" src="img/projects/delivery-food.jpg" alt="Delivery Food верстка JavaScript">
+            <div class="projects-plate">
+              <span class="projects-plate__text">Delivery Food</span>
+            </div>
+            <div class="projects-info">
+              <h3 class="projects-info__title">Сайт доставки еды Delivery Food</h3>
+              <span class="projects-info__desc">Разработка frontend части сайта для будущего проекта по доставке еды. Написание внешней логики сайта, карточек товаров и корзины.</span>
+            </div>
+          </div>
+        </a><!-- /.project__link -->
+        <a href="projects/distance/index.html" class="projects__link">
+          <div class="projects-blocks-big project">
+            <img class="projects-img" src="img/projects/distance.jpg" alt="Distance Дистанция">
+            <div class="projects-plate">
+              <span class="projects-plate__text">Distance</span>
+            </div>
+            <div class="projects-info">
+              <h3 class="projects-info__title">Макет соц.сети "Дистанция"</h3>
+              <span class="projects-info__desc">Вёрстка дизайн-макета сайта соц.сети "Distance" в англоязычном варианте. Использование UI/UX элементов дизайна и работа с svg графикой.</span>
+            </div>
+          </div>
+        </a><!-- /.project__link -->
+        <div class="projects-blocks-smalls">
+          <a href="projects/domanaveka/index.html" class="project__link">
+            <div class="projects-blocks-smalls-block project">
+              <img class="projects-img" src="img/projects/domanaveka.jpg" alt="Дома навека верстка лендинг">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Дома навека</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Лендинг для компании "Доманавека"</h3>
+                <span class="projects-info__desc">Адаптивная вёрстка реального лендинга строительной компании "Доманавека". Написание слайдера и фильтра для карточек домов на нативном (чистом) JavaScript.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+          <a href="projects/gipsolit/index.html" class="projects__link">
+            <div class="projects-blocks-smalls-block project">
+              <img class="projects-img" src="img/projects/gipsoplit.jpg" alt="Гипсоплит верстка сайтов разработка">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Гипсоплит</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Лендинг "Гипсоплит"</h3>
+                <span class="projects-info__desc">Вёрстка адаптивного лендинга для компании Гипсоплит с формой обратной связи, модальными окнами и анимацией. Использование библиотеки Bootstrap.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->         
+          <a href="projects/stroyinvest/index.html" class="project__link">
+            <div class="projects-blocks-smalls-block project">
+              <img class="projects-img" src="img/projects/stroyinvest.jpg" alt="СтройИнвест верстка WordPress">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Стройинвест</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Разработка сайта строительной компании СтройИнвест на WordPress</h3>
+                <span class="projects-info__desc">Полная разработка сайта с посадкой и настройкой на CMS WordPress. Написание калькулятора на jQuery для расчёта инвестиций.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+          <a href="projects/mogo/index.html" class="project__link">
+            <div class="projects-blocks-smalls-block project">
+              <img class="projects-img" src="img/projects/mogo.jpg" alt="Mogo верстка разработка">
+              <div class="projects-plate">
+                <span class="projects-plate__text">Mogo</span>
+              </div>
+              <div class="projects-info">
+                <h3 class="projects-info__title">Макет Mogo</h3>
+                <span class="projects-info__desc">Верстка макета Mogo в рамках воркшопа по семантической верстке сайтов. Работа с svg и препроцессрами SASS и SCSS.</span>
+              </div>
+            </div>
+          </a><!-- /.project__link -->
+        </div><!-- /.projects-blocks-smalls -->
+      </div><!-- /.projects-blocks -->
+    </section><!-- /.projects -->
+  </div><!-- /.container -->
+    <!-- <h1 class="counter1" style="text-align: center">126</h1>
+    <h1 class="counter2" style="text-align: center">50</h1>
+    <h1 class="counter3" style="text-align: center">10</h1> -->
+  
+  <script src="scripts/script.js"></script>
+</body>
+</html>

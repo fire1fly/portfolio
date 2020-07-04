@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Dosis Regular, Helvetica, sans-serif';
+  src: url('../fonts/Dosis-Regular.eot');
+  src: url('../fonts/Dosis-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Dosis-Regular.woff') format('woff'),
+  url('../fonts/Dosis-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat Regular, Helvetica, sans-serif';
+  src: url('../fonts/Montserrat-Regular.eot');
+  src: url('../fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Montserrat-Regular.woff') format('woff'),
+  url('../fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin reg-dosis {
+  font-family: 'Dosis Regular, Helvetica, sans-serif';
+}
+
+
+@mixin reg-monts {
+  font-family: 'Montserrat Regular, Helvetica, sans-serif';
+}

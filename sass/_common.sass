@@ -1,0 +1,204 @@
+*
+  box-sizing: border-box
+html
+  font-size: 10px
+body
+  position: relative
+  +reg-monts
+  color: $main-text-color
+a
+  color: inherit
+
+.container, .fluid-container
+  max-width: 1200px
+  margin: 0 auto
+  z-index: 1
+
+.section
+  padding: 50px 0
+  &-title
+    margin: 0
+    font-size: 3rem
+    text-align: center
+
+.menuButton
+  display: none
+  position: relative
+  float: right
+  background: rgba($main-text-color, 0.7)
+  padding: 25px 20px
+  border-top: 1px solid #fff
+  border-bottom: 1px solid #fff
+  border-left: 1px solid #fff
+  border-top-left-radius: 10px
+  border-bottom-left-radius: 10px
+  margin: 0 0 30px 30px
+  cursor: pointer
+  transition: all .4s ease
+  z-index: 200
+  &__wrap
+    position: fixed
+    right: 0
+    top: 22px
+    z-index: 30000
+.burger
+  position: relative
+  display: block
+  width: 30px
+  height: 1px
+  background: #fff
+  margin: 0
+  padding: 0
+  z-index: 3000
+  transition: all .4s ease
+  &::before
+    content: ''
+    position: absolute
+    top: -10px
+    display: block
+    width: 30px
+    height: 1px
+    z-index: 30000
+    background: #fff
+    transition: all .4s ease
+    transform: rotate(0deg)
+  &::after
+    content: ''
+    position: absolute
+    top: 10px
+    display: block
+    width: 30px
+    height: 1px
+    z-index: 30000
+    background: #fff
+    transition: all .4s ease
+    transform: rotate(0deg)
+.burgerActive
+  position: relative
+  display: block
+  background: 0 0
+  margin: 0
+  padding: 0
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: -5px
+    display: block
+    width: 40px
+    height: 1px
+    z-index: 30000
+    background: #fff
+    transition: all .3s ease
+    transform: rotate(45deg)
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: -5px
+    display: block
+    width: 40px
+    height: 1px
+    z-index: 30000
+    background: #fff
+    transition: all .3s ease
+    transform: rotate(-45deg)
+.navigate
+  position: absolute
+  display: block
+  background: rgba($main-text-color, 0.9)
+  padding: 0 15px
+  height: 53px
+  line-height: 51px
+  top: -1px
+  right: -170px
+  font-size: 1em
+  color: #fff
+  border: 1px solid #fff
+  border-top-left-radius: 20px
+  border-bottom-left-radius: 20px
+  transition: all .4s ease
+
+.scrollHide
+  overflow: hidden
+
+.modalMenu
+  position: fixed
+  display: block
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba($main-text-color, 0.8)
+  opacity: 0
+  z-index: -3
+  &__inner
+    display: flex
+    height: 100%
+    justify-content: center
+    align-items: center
+  &-wrapList
+    width: 40%
+    display: flex
+    flex-direction: column
+    text-align: center
+    &__borderBottom
+      max-width: 225px
+      width: 100%
+      position: relative
+      border: none
+      height: 1px
+      margin: 25px auto 0
+      padding: 0
+      background: #fff
+      background: linear-gradient(to right,rgba(255,255,255,0) 0%,white 20%,white 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#ffffff',GradientType=1)
+      opacity: .3
+      transition: all .4s ease
+    &__item
+      margin-bottom: 25px
+      font-size: 2rem
+      font-weight: 300
+      letter-spacing: 1px
+      text-transform: uppercase
+      opacity: 0
+    &__link
+      text-decoration: none
+      color: #fff
+
+.fadeIn
+  animation: fadeIn 0.4s linear 0s 1 normal forwards
+.fadeOut
+  animation: fadeOut 0.4s linear 0s 1 normal forwards
+.fadeLeftMenu
+  animation: fadeLeftMenu
+  animation-duration: 0.15s
+  animation-timing-function: linear
+  animation-direction: normal
+  animation-fill-mode: forwards
+@keyframes fadeLeftMenu
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+  100%
+    opacity: 1
+    transform: translateX(0%)
+    
+
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+    z-index: -3
+  100%
+    opacity: 1
+    z-index: 2
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+    z-index: 2
+  100%
+    opacity: 0
+    z-index: -3   
+    
