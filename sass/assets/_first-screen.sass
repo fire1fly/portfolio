@@ -26,13 +26,29 @@
       margin-top: 50px
       text-align: center
 .header
-  padding: 20px 20px 0
-  display: flex
-  align-items: flex-start
-  justify-content: space-between
+  &__inner
+    margin: 0 auto
+    max-width: 1200px
+    padding: 20px
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &-scroll
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    background-color: #fff
+    z-index: 3
+    .header__inner
+      align-items: center
+
 .logo
   display: flex
   align-items: center
+  &__link
+    text-decoration: none
+    color: inherit
   &__img
     width: 40px
     height: 40px
@@ -41,6 +57,7 @@
     font-size: 5rem
     +reg-dosis
     letter-spacing: 3px
+    text-decoration: none
 .nav
   flex-grow: 1
   max-width: 500px
@@ -69,13 +86,29 @@
       transform: translate(-50%, -50%)
       transition: stroke-dashoffset 0s 0.2s, opacity 0.2s
       // z-index: -1
-    &__active svg
+    &_active svg
       stroke: $main-text-color
+      stroke-dashoffset: 0
+      opacity: 1
+      transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
     &:hover
       .nav-link__svg
         stroke-dashoffset: 0
         opacity: 1
         transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+.slideFadeDown
+  animation: slideFadeDown 0.2s linear 0s 1 normal forwards
+
+@keyframes slideFadeDown
+  0%
+    transform: translateY(-100%)
+  100%
+    transform: translateY(0%)
+
+.about, .offer, .contacts
+  height: 1300px
+  outline: 3px solid $main-text-color
     
 
 .scroll-mouse
@@ -113,7 +146,7 @@
     background-color: transparent
 
 .animScrollDown
-  animation: scrollDown 1.2s linear 0s infinite alternate none
+  animation: scrollDown 1s linear 0s infinite alternate none
 
 @keyframes scrollDown
   0%

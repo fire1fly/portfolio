@@ -256,14 +256,14 @@ a {
   }
   100% {
     opacity: 1;
-    z-index: 2;
+    z-index: 4;
   }
 }
 
 @keyframes fadeOut {
   0% {
     opacity: 1;
-    z-index: 2;
+    z-index: 4;
   }
   100% {
     opacity: 0;
@@ -310,16 +310,36 @@ a {
   text-align: center;
 }
 
-.header {
-  padding: 20px 20px 0;
+.header__inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
+.header-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 3;
+}
+
+.header-scroll .header__inner {
+  align-items: center;
+}
+
 .logo {
   display: flex;
   align-items: center;
+}
+
+.logo__link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo__img {
@@ -332,6 +352,7 @@ a {
   font-size: 5rem;
   font-family: 'Dosis Regular, Helvetica, sans-serif';
   letter-spacing: 3px;
+  text-decoration: none;
 }
 
 .nav {
@@ -367,14 +388,35 @@ a {
   transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
 }
 
-.nav-link__active svg {
+.nav-link_active svg {
   stroke: #1E1F1C;
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .nav-link:hover .nav-link__svg {
   stroke-dashoffset: 0;
   opacity: 1;
   transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.slideFadeDown {
+  animation: slideFadeDown 0.2s linear 0s 1 normal forwards;
+}
+
+@keyframes slideFadeDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.about, .offer, .contacts {
+  height: 1300px;
+  outline: 3px solid #1E1F1C;
 }
 
 .scroll-mouse {
@@ -419,7 +461,7 @@ a {
 }
 
 .animScrollDown {
-  animation: scrollDown 1.2s linear 0s infinite alternate none;
+  animation: scrollDown 1s linear 0s infinite alternate none;
 }
 
 @keyframes scrollDown {
@@ -772,8 +814,11 @@ a {
     background-size: 240%;
     background-position-x: 0px;
   }
+  .first-screen__inner {
+    height: 250px;
+  }
   .first-screen-title {
-    margin-top: 65px;
+    margin-top: 40px;
     font-size: 1.2rem;
     text-align: center;
   }
@@ -820,13 +865,17 @@ a {
   }
 }
 
-@media (max-width: 812px) and (min-height: 320px) {
+@media (max-width: 812px) and (min-height: 320px) and (max-height: 414px) {
   .modalMenu-wrapList__item {
     margin-bottom: 15px;
     font-size: 1.4rem;
   }
   .modalMenu-wrapList__borderBottom {
     margin-top: 15px;
+  }
+  .header__inner {
+    align-items: center;
+    padding: 0 20px 5px;
   }
 }
 /*# sourceMappingURL=style.css.map */
