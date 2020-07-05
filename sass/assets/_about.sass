@@ -1,0 +1,83 @@
+.nums
+  max-width: 1000px
+  margin: 0 auto 100px
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+  &-item
+    display: flex
+    flex-wrap: nowrap
+    flex-direction: column
+    align-items: center
+    text-align: center
+    font-size: 1.6rem
+    font-weight: bold
+    &-icon
+      margin-bottom: 8px
+      width: 50px
+      height: 50px
+    &-title
+      margin-bottom: 8px
+      letter-spacing: 1px
+    &-divider
+      margin-bottom: 8px
+
+.about
+  height: 1000px
+  &__title
+    margin-bottom: 50px
+  &-me
+    &__avatar
+      margin-right: 30px
+      border-radius: 50%
+    &-shortinfo
+      margin-bottom: 50px
+      display: flex
+      align-items: center
+      &__title
+        margin: 0
+        margin-bottom: 10px
+        font-size: 2.5rem
+        text-transform: uppercase
+      &__speciality
+        display: block
+        margin-bottom: 20px
+        font-size: 1.8rem
+      &-subinfo
+        display: flex
+        justify-content: flex-start
+        font-size: 1.8rem
+      &-year
+        margin-right: 40px
+        &__text
+          margin-bottom: 10px
+          display: block
+      &-city
+        &__text
+          margin-bottom: 10px
+          display: block
+    &-info
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      font-size: 1.6rem
+      line-height: 27px
+      &-detailed
+        max-width: 500px
+      &-skills
+        &__text
+          padding-bottom: 8px
+          &::after
+            content: ""
+            width: 0
+            transition: all 1s
+._border-bottom
+  &::after
+    content: ""
+    display: block
+    width: 100%
+    margin-top: 8px
+    height: 1px
+    background: linear-gradient(to right,$main-text-color 0%, rgba($main-text-color, 0.5), white 100%)
+      
+  

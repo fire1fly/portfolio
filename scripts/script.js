@@ -10,25 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
         navLinks = document.querySelectorAll(".nav-link"),
         firstScreenInner = document.querySelector(".first-screen__inner"),
         projectsBlock = document.querySelector(".projects"),
-        counter1 = document.querySelector(".counter1"),
-        counter2 = document.querySelector(".counter2"),
-        counter3 = document.querySelector(".counter3"),
+        numsBlock = document.querySelector(".nums"),
+        aboutMeBlock = document.querySelector(".about-me"),
+        numsItemNum = document.querySelectorAll(".nums-item-num"),
+        skillsBlock = document.querySelector(".about-me-info-skills"),
+        skillsBorders = document.querySelectorAll(".about-me-info-skills__text"),
         delayList = document.querySelectorAll(".delay");
+
+
   // data
         
   const delayArray = Array.prototype.slice.call(delayList),
         modalMenuItemsArray = Array.prototype.slice.call(modalMenuItems),
         navLinksArray = Array.prototype.slice.call(navLinks),
         offsetTopsArray = Array.prototype.slice.call(offsetTopsElems);
+  let countSwitch, skillsBorderSwitch;
 
   // funcs
 
   const countUpdate = (count) => {
-    const counterNum = parseFloat(count.textContent);
+    const counterNum = parseInt(count.dataset.num);
     let i = 0;
     setInterval(() => {
-      if (i < counterNum) count.textContent = ++i;
-    }, 40);
+      if (i < counterNum) count.textContent = ++i + "+";
+    }, 100);
   };
 
   delayArray.forEach(elem => {
@@ -36,12 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     elem.style.animationDelay = delayValue + 's';
   });
 
-
   // calls and events
-
-  // countUpdate(counter1);
-  // countUpdate(counter2);
-  // countUpdate(counter3);
 
   menuBtn.addEventListener("click", () => {
     if (modalMenu.className == 'modalMenu') {
@@ -64,20 +64,35 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (document.body.clientWidth > 768) {
-    window.addEventListener('scroll', () => { 
-      if (window.pageYOffset > 77) {
-        firstScreenInner.style.paddingTop = '77px';
+    window.addEventListener('scroll', function() {
+      // console.log(aboutMeBlock.getBoundingClientRect().top);
+      if (numsBlock.dataset.counted == 'false') {
+        countSwitch = true;
+      } else {
+        countSwitch = false;
+      }
+
+      if (skillsBlock.dataset.bordered == 'false') {
+        skillsBorderSwitch = true;
+      } else {
+        skillsBorderSwitch = false;
+      }
+
+      if (window.pageYOffset > 97) {
+        firstScreenInner.style.paddingTop = '97px';
+        firstScreenInner.style.boxSizing = 'content-box';
         headerContainer.classList.add("header-scroll");
         headerContainer.classList.add("slideFadeDown");
       } else {
         firstScreenInner.style.paddingTop = '0px';
+        firstScreenInner.style.boxSizing = 'border-box';
         headerContainer.classList.remove("header-scroll");
         headerContainer.classList.remove("slideFadeDown");
       }
+
       navLinksArray.forEach((elem, i, array) => {
-        let scrollTop = offsetTopsArray[i].offsetTop;
         if (window.pageYOffset > offsetTopsArray[i].offsetTop - 70 && 
-            window.pageYOffset < offsetTopsArray[i].offsetTop + (offsetTopsArray[i].offsetHeight / 2)) {
+          window.pageYOffset < offsetTopsArray[i].offsetTop + (offsetTopsArray[i].offsetHeight / 2)) {
           elem.classList.add("nav-link_active");
           if (array[i+1]) {
             array[i+1].classList.remove("nav-link_active");
@@ -87,6 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       });
+
+      if (numsBlock.getBoundingClientRect().top < 790 && countSwitch) {
+        numsItemNum.forEach(elem => {
+          countUpdate(elem);
+        });
+        numsBlock.dataset.counted = 'true';
+      } 
+      
+      if (aboutMeBlock.getBoundingClientRect().top < 300 && skillsBorderSwitch) {
+        skillsBorders.forEach(elem => {
+          elem.classList.add("_border-bottom");
+        });
+        skillsBlock.dataset.bordered = 'true';
+      }
     });
   }
 
@@ -98,9 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let href = this.getAttribute('href').substring(1);
 
         const scrollTarget = document.getElementById(href);
-
-        // const topOffset = document.querySelector('.scrollto').offsetHeight;
-        const topOffset = 50; // если не нужен отступ сверху 
+        const topOffset = 50; 
         const elementPosition = scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 
