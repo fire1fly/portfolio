@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
   // elems
   const body = document.querySelector('#body'),
         menuBtn = document.querySelector(".menuButton"),
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // funcs
 
-  const countUpdate = (count) => {
+  const countUpdate = function(count) {
     const counterNum = parseInt(count.dataset.num);
     let i = 0;
     setInterval(() => {
@@ -36,14 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100);
   };
 
-  delayArray.forEach(elem => {
+  delayArray.forEach(function(elem) {
     let delayValue = elem.dataset.delay;
     elem.style.animationDelay = delayValue + 's';
   });
 
   // calls and events
 
-  menuBtn.addEventListener("click", () => {
+  menuBtn.addEventListener("click", function() {
     if (modalMenu.className == 'modalMenu') {
       modalMenu.classList.add('fadeIn');
     }
@@ -63,21 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  if (document.body.clientWidth > 768) {
-    window.addEventListener('scroll', function() {
+  window.addEventListener('scroll', function() {
+    countSwitch = numsBlock.dataset.counted == 'false' ? true : false;
+    skillsBorderSwitch = skillsBlock.dataset.bordered == 'false' ? true : false;
+
+    if (document.body.clientWidth > 768) {
       // console.log(aboutMeBlock.getBoundingClientRect().top);
-      if (numsBlock.dataset.counted == 'false') {
-        countSwitch = true;
-      } else {
-        countSwitch = false;
-      }
-
-      if (skillsBlock.dataset.bordered == 'false') {
-        skillsBorderSwitch = true;
-      } else {
-        skillsBorderSwitch = false;
-      }
-
+      
       if (window.pageYOffset > 97) {
         firstScreenInner.style.paddingTop = '97px';
         firstScreenInner.style.boxSizing = 'content-box';
@@ -90,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headerContainer.classList.remove("slideFadeDown");
       }
 
-      navLinksArray.forEach((elem, i, array) => {
+      navLinksArray.forEach(function(elem, i, array)  {
         if (window.pageYOffset > offsetTopsArray[i].offsetTop - 70 && 
           window.pageYOffset < offsetTopsArray[i].offsetTop + (offsetTopsArray[i].offsetHeight / 2)) {
           elem.classList.add("nav-link_active");
@@ -102,22 +94,23 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       });
+    }
 
-      if (numsBlock.getBoundingClientRect().top < 790 && countSwitch) {
-        numsItemNum.forEach(elem => {
-          countUpdate(elem);
-        });
-        numsBlock.dataset.counted = 'true';
-      } 
-      
-      if (aboutMeBlock.getBoundingClientRect().top < 300 && skillsBorderSwitch) {
-        skillsBorders.forEach(elem => {
-          elem.classList.add("_border-bottom");
-        });
-        skillsBlock.dataset.bordered = 'true';
-      }
-    });
-  }
+    if (numsBlock.getBoundingClientRect().top < 790 && countSwitch) {
+      numsItemNum.forEach(function(elem) {
+        countUpdate(elem);
+      });
+      numsBlock.dataset.counted = 'true';
+    } 
+    
+    if (aboutMeBlock.getBoundingClientRect().top < 300 && skillsBorderSwitch) {
+      skillsBorders.forEach(function(elem) {
+        elem.classList.add("_border-bottom");
+      });
+      skillsBlock.dataset.bordered = 'true';
+    }
+  });
+
 
   document.querySelectorAll('a[href^="#"').forEach(link => {
 

@@ -9,6 +9,13 @@ body
 a
   color: inherit
 
+.bg-selection
+
+div, img, p, a, span, strong, h1, h2, h3, h4
+  &::selection
+    color: #fff
+    background-color: rgba($main-text-color, 0.8)
+
 .container, .fluid-container
   max-width: 1200px
   margin: 0 auto
