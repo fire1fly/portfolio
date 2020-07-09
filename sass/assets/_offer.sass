@@ -1,0 +1,99 @@
+.offer
+  height: 1000px
+  padding-right: 20px
+  padding-left: 20px
+  &__title
+    margin-bottom: 100px
+  &-block
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    &__item
+      margin-bottom: 40px
+      width: 40%
+      display: flex
+      flex-wrap: nowrap
+      opacity: 0
+    &__check
+      margin-right: 20px
+      width: 40px
+      height: 40px
+    &-info
+      &__title
+        margin: 0
+        margin-bottom: 20px
+        font-size: 2rem
+      &__text
+        margin: 0
+        font-size: 1.6rem
+        line-height: 27px
+
+.topLeftFade
+  animation: topLeftFade 1.2s ease-out 0s 1 normal forwards
+
+.topRightFade
+  animation: topRightFade 1.2s ease-out 0s 1 normal forwards
+
+.leftFade
+  animation: leftFade 1.2s ease-out 0s 1 normal forwards
+
+.rightFade
+  animation: rightFade 1.2s ease-out 0s 1 normal forwards
+
+.bottomRightFade
+  animation: bottomRightFade 1.2s ease-out 0s 1 normal forwards
+
+.bottomLeftFade
+  animation: bottomLeftFade 1.2s ease-out 0s 1 normal forwards
+
+
+@keyframes topLeftFade
+  0%
+    opacity: 0
+    transform: translate(-100px, -70px)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+@keyframes topRightFade
+  0%
+    opacity: 0
+    transform: translate(100px, -70px)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+@keyframes leftFade
+  0%
+    opacity: 0
+    transform: translateX(-100px)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes rightFade
+  0%
+    opacity: 0
+    transform: translateX(100px) 
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes bottomRightFade
+  0%
+    opacity: 0
+    transform: translate(100px, 70px)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+
+@keyframes bottomLeftFade
+  0%
+    opacity: 0
+    transform: translate(-100px, 70px)
+  100%
+    opacity: 1
+    transform: translate(0, 0)
+    
+
+    

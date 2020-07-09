@@ -33,6 +33,19 @@
         display: none
       .projects-plate
         opacity: 1
+  .offer
+    &-block
+      justify-content: space-around 
+      &__check
+        width: 30px
+        height: 30px
+      &-info
+        &__title
+          font-size: 1.8rem
+        &__text
+          font-size: 1.4rem
+    
+
 @media ( max-width: 992px )
   .first-screen
     height: 500px
@@ -71,7 +84,11 @@
           padding-right: 30px
         &-skills
           width: 50%
-
+  .offer
+    &-block
+      justify-content: space-between
+      &__item
+        width: 48%
 
 @media ( max-width: 768px )
   .menuButton
@@ -111,7 +128,19 @@
           width: 90%
           padding-right: 0
         &-skills
-          width: 90%
+          width: 70%
+  .offer
+    &-block
+      &__check
+        margin-right: 10px
+      &__item
+        opacity: 1
+      &-info
+        &__title
+          font-size: 1.6rem
+        &__text
+          font-size: 1.2rem
+          line-height: 24px
 
 @media ( max-width: 576px )
   .section
@@ -164,6 +193,14 @@
       &-info
         &-detailed
           width: 100%
+  .offer
+    &-block
+      flex-wrap: wrap
+      &__item
+        width: 100%
+      &-info
+        &__title
+          margin-bottom: 10px
 
 
 @media ( max-width: 414px ) and (max-height: 824px)

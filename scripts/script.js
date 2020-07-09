@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
         numsItemNum = document.querySelectorAll(".nums-item-num"),
         skillsBlock = document.querySelector(".about-me-info-skills"),
         skillsBorders = document.querySelectorAll(".about-me-info-skills__text"),
+        offerBlock = document.querySelector(".offer-block"),
+        offerBlockItems = document.querySelectorAll(".offer-block__item"),
         delayList = document.querySelectorAll(".delay");
 
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         modalMenuItemsArray = Array.prototype.slice.call(modalMenuItems),
         navLinksArray = Array.prototype.slice.call(navLinks),
         offsetTopsArray = Array.prototype.slice.call(offsetTopsElems);
-  let countSwitch, skillsBorderSwitch;
+  let countSwitch, skillsBorderSwitch, offerAnimSwitch;
 
   // funcs
 
@@ -65,10 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener('scroll', function() {
     countSwitch = numsBlock.dataset.counted == 'false' ? true : false;
-    skillsBorderSwitch = skillsBlock.dataset.bordered == 'false' ? true : false;
+    skillsBorderSwitch = skillsBlock.dataset.animated == 'false' ? true : false;
+    offerAnimSwitch = offerBlock.dataset.animated == 'false' ? true : false;
 
     if (document.body.clientWidth > 768) {
-      // console.log(aboutMeBlock.getBoundingClientRect().top);
+      console.log(offerBlock.getBoundingClientRect().top);
       
       if (window.pageYOffset > 97) {
         firstScreenInner.style.paddingTop = '97px';
@@ -83,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       navLinksArray.forEach(function(elem, i, array)  {
-        if (window.pageYOffset > offsetTopsArray[i].offsetTop - 70 && 
+        if (window.pageYOffset > offsetTopsArray[i].offsetTop - 60 && 
           window.pageYOffset < offsetTopsArray[i].offsetTop + (offsetTopsArray[i].offsetHeight / 2)) {
           elem.classList.add("nav-link_active");
           if (array[i+1]) {
@@ -94,6 +97,13 @@ document.addEventListener("DOMContentLoaded", function() {
           }
         }
       });
+
+      if (offerBlock.getBoundingClientRect().top < 700 && offerAnimSwitch) {
+        offerBlockItems.forEach(function(elem) {
+          elem.classList.add(elem.dataset.animName);
+        });
+        offerBlock.dataset.animated = 'true';
+      }
     }
 
     if (numsBlock.getBoundingClientRect().top < 790 && countSwitch) {
