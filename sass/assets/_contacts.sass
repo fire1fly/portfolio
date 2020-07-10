@@ -1,0 +1,99 @@
+.contacts
+  padding-right: 20px
+  padding-left: 20px
+  &__title
+    margin-bottom: 30px
+  &__subtitle
+    margin-bottom: 40px
+    font-size: 1.6rem
+    text-align: center
+  &-wrap
+    display: flex
+    justify-content: space-between
+  &-block
+    width: 30%
+    &__item
+      margin-bottom: 30px
+    &__icon
+      margin-right: 15px
+      width: 30px
+      height: 30px
+    &__link
+      display: inline-flex
+      align-items: center
+      font-size: 1.6rem
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+#contacts
+  &-whatsapp
+    .contacts-block__icon
+      background: #fff url('../img/contacts/whatsapp.png')
+      background-size: 100%
+    &:hover
+      .contacts-block__icon
+        background-image: url('../img/contacts/whatsapp-active.png')
+  &-telegram
+    .contacts-block__icon
+      background: #fff url('../img/contacts/telegram.png')
+      background-size: 100%
+    &:hover
+      .contacts-block__icon
+        background-image: url('../img/contacts/telegram-active.png')
+  &-vk
+    .contacts-block__icon
+      background: #fff url('../img/contacts/vk.png')
+      background-size: 100%
+    &:hover
+      .contacts-block__icon
+        background-image: url('../img/contacts/vk-active.png')
+  &-insta
+    .contacts-block__icon
+      background: #fff url('../img/contacts/instagram.png')
+      background-size: 100%
+    &:hover
+      .contacts-block__icon
+        background-image: url('../img/contacts/instagram-active.png')
+  &-gmail
+    .contacts-block__icon
+      background: #fff url('../img/contacts/gmail.png')
+      background-size: 100%
+    &:hover
+      .contacts-block__icon
+        background-image: url('../img/contacts/gmail-active.png')
+  &-skype
+    .contacts-block__icon
+      background: #fff url('../img/contacts/skype.png')
+      background-size: 100%
+    &:hover
+      .contacts-block__icon
+        background-image: url('../img/contacts/skype-active.png')
+
+.feedback
+  &__wrap
+    width: 40%
+  &-input
+    margin-bottom: 20px
+    display: block
+    padding: 10px
+    width: 100%
+    height: 40px
+    font-size: 1.4rem
+    border: 1px solid rgba($main-text-color, 0.3)
+    &::placeholder
+      font-size: 1.2rem
+  &__textarea
+    width: 100%
+    height: 200px
+    resize: none
+  &-btn
+    width: 150px
+    height: 40px
+    font-size: 1.4rem
+    background-color: $main-text-color
+    cursor: pointer
+    border: none
+    color: #fff
+    &:hover
+      background-color: #000

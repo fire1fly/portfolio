@@ -89,6 +89,10 @@
       justify-content: space-between
       &__item
         width: 48%
+  .feedback
+    &__wrap
+      width: 50%
+
 
 @media ( max-width: 768px )
   .menuButton
@@ -102,11 +106,12 @@
   .projects
     &-blocks
       &-smalls
-        justify-content: center
+        justify-content: space-around
         &-block
+          margin: 0
           margin-bottom: 20px
-          width: 360px
-          height: 340px
+          width: 240px
+          height: 240px
   .nums
     margin-bottom: 30px
     &-item
@@ -141,6 +146,16 @@
         &__text
           font-size: 1.2rem
           line-height: 24px
+  .contacts
+    &__subtitle
+      font-size: 1.4rem
+    &-block
+      width: 50%
+      &__link
+        font-size: 1.2rem
+  .feedback
+    &__textarea
+      height: 130px
 
 @media ( max-width: 576px )
   .section
@@ -170,6 +185,12 @@
       width: 12px
       height: 12px
       border-width: 2px
+  .projects
+    &-blocks
+      &-smalls
+        &-block
+          width: 200px
+          height: 200px
   .nums
     &-item
       font-size: 1.2rem
@@ -194,6 +215,9 @@
         &-detailed
           width: 100%
   .offer
+    padding: 20px
+    &__title
+      margin-bottom: 30px
     &-block
       flex-wrap: wrap
       &__item
@@ -201,7 +225,29 @@
       &-info
         &__title
           margin-bottom: 10px
-
+  .contacts
+    &__subtitle
+      font-size: 1.2rem
+    &-wrap
+      flex-wrap: wrap
+    &-block
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      &__item
+        width: 40%
+      &__icon
+        width: 20px
+        height: 20px
+  .feedback
+    &__wrap
+      width: 100%
+      padding-left: 30px
+      padding-right: 30px
+    &-btn
+      display: block
+      margin: 0 auto
 
 @media ( max-width: 414px ) and (max-height: 824px)
   .modalMenu
@@ -271,6 +317,15 @@
           font-size: 1rem
         &-subinfo
           font-size: 1rem
+  .contacts
+    padding-top: 0
+    &-block
+      &__item
+        width: 100%
+        text-align: center
+  .feedback
+    &-input
+      font-size: 1.2rem
   
 @media ( max-width: 812px ) and (min-height: 320px) and (max-height: 414px)
   .modalMenu

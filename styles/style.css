@@ -32,7 +32,11 @@ a {
   color: inherit;
 }
 
-div::selection, img::selection, p::selection, a::selection, span::selection, strong::selection, h1::selection, h2::selection, h3::selection, h4::selection {
+input:focus, button:focus, textarea:focus {
+  outline: none;
+}
+
+div::selection, img::selection, p::selection, a::selection, span::selection, strong::selection, b::selection, h1::selection, h2::selection, h3::selection, h4::selection {
   color: #fff;
   background-color: rgba(30, 31, 28, 0.8);
 }
@@ -790,7 +794,6 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
 }
 
 .offer {
-  height: 1000px;
   padding-right: 20px;
   padding-left: 20px;
 }
@@ -813,10 +816,16 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
   opacity: 0;
 }
 
-.offer-block__check {
+.offer-block-check {
   margin-right: 20px;
-  width: 40px;
+  flex: 1 0 40px;
+  max-width: 40px;
   height: 40px;
+}
+
+.offer-block-check__img {
+  width: 100%;
+  max-width: 100%;
 }
 
 .offer-block-info__title {
@@ -919,6 +928,150 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
     opacity: 1;
     transform: translate(0, 0);
   }
+}
+
+.contacts {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.contacts__title {
+  margin-bottom: 30px;
+}
+
+.contacts__subtitle {
+  margin-bottom: 40px;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.contacts-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts-block {
+  width: 30%;
+}
+
+.contacts-block__item {
+  margin-bottom: 30px;
+}
+
+.contacts-block__icon {
+  margin-right: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.contacts-block__link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.contacts-block__link:hover {
+  text-decoration: underline;
+}
+
+#contacts-whatsapp .contacts-block__icon {
+  background: #fff url("../img/contacts/whatsapp.png");
+  background-size: 100%;
+}
+
+#contacts-whatsapp:hover .contacts-block__icon {
+  background-image: url("../img/contacts/whatsapp-active.png");
+}
+
+#contacts-telegram .contacts-block__icon {
+  background: #fff url("../img/contacts/telegram.png");
+  background-size: 100%;
+}
+
+#contacts-telegram:hover .contacts-block__icon {
+  background-image: url("../img/contacts/telegram-active.png");
+}
+
+#contacts-vk .contacts-block__icon {
+  background: #fff url("../img/contacts/vk.png");
+  background-size: 100%;
+}
+
+#contacts-vk:hover .contacts-block__icon {
+  background-image: url("../img/contacts/vk-active.png");
+}
+
+#contacts-insta .contacts-block__icon {
+  background: #fff url("../img/contacts/instagram.png");
+  background-size: 100%;
+}
+
+#contacts-insta:hover .contacts-block__icon {
+  background-image: url("../img/contacts/instagram-active.png");
+}
+
+#contacts-gmail .contacts-block__icon {
+  background: #fff url("../img/contacts/gmail.png");
+  background-size: 100%;
+}
+
+#contacts-gmail:hover .contacts-block__icon {
+  background-image: url("../img/contacts/gmail-active.png");
+}
+
+#contacts-skype .contacts-block__icon {
+  background: #fff url("../img/contacts/skype.png");
+  background-size: 100%;
+}
+
+#contacts-skype:hover .contacts-block__icon {
+  background-image: url("../img/contacts/skype-active.png");
+}
+
+.feedback__wrap {
+  width: 40%;
+}
+
+.feedback-input {
+  margin-bottom: 20px;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  font-size: 1.4rem;
+  border: 1px solid rgba(30, 31, 28, 0.3);
+}
+
+.feedback-input::placeholder {
+  font-size: 1.2rem;
+}
+
+.feedback__textarea {
+  width: 100%;
+  height: 200px;
+  resize: none;
+}
+
+.feedback-btn {
+  width: 150px;
+  height: 40px;
+  font-size: 1.4rem;
+  background-color: #1E1F1C;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+}
+
+.feedback-btn:hover {
+  background-color: #000;
+}
+
+.footer {
+  padding: 30px;
+  background-color: rgba(30, 31, 28, 0.05);
+  text-align: center;
+  font-size: 1.4rem;
 }
 
 @media (max-width: 1650px) {
@@ -1040,6 +1193,9 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
   .offer-block__item {
     width: 48%;
   }
+  .feedback__wrap {
+    width: 50%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1056,12 +1212,13 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
     font-size: 2rem;
   }
   .projects-blocks-smalls {
-    justify-content: center;
+    justify-content: space-around;
   }
   .projects-blocks-smalls-block {
+    margin: 0;
     margin-bottom: 20px;
-    width: 360px;
-    height: 340px;
+    width: 240px;
+    height: 240px;
   }
   .nums {
     margin-bottom: 30px;
@@ -1102,6 +1259,18 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
     font-size: 1.2rem;
     line-height: 24px;
   }
+  .contacts__subtitle {
+    font-size: 1.4rem;
+  }
+  .contacts-block {
+    width: 50%;
+  }
+  .contacts-block__link {
+    font-size: 1.2rem;
+  }
+  .feedback__textarea {
+    height: 130px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1140,6 +1309,10 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
     height: 12px;
     border-width: 2px;
   }
+  .projects-blocks-smalls-block {
+    width: 200px;
+    height: 200px;
+  }
   .nums-item {
     font-size: 1.2rem;
   }
@@ -1165,6 +1338,12 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
   .about-me-info-detailed {
     width: 100%;
   }
+  .offer {
+    padding: 20px;
+  }
+  .offer__title {
+    margin-bottom: 30px;
+  }
   .offer-block {
     flex-wrap: wrap;
   }
@@ -1173,6 +1352,34 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
   }
   .offer-block-info__title {
     margin-bottom: 10px;
+  }
+  .contacts__subtitle {
+    font-size: 1.2rem;
+  }
+  .contacts-wrap {
+    flex-wrap: wrap;
+  }
+  .contacts-block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .contacts-block__item {
+    width: 40%;
+  }
+  .contacts-block__icon {
+    width: 20px;
+    height: 20px;
+  }
+  .feedback__wrap {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .feedback-btn {
+    display: block;
+    margin: 0 auto;
   }
 }
 
@@ -1255,6 +1462,16 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
   }
   .about-me-shortinfo-subinfo {
     font-size: 1rem;
+  }
+  .contacts {
+    padding-top: 0;
+  }
+  .contacts-block__item {
+    width: 100%;
+    text-align: center;
+  }
+  .feedback-input {
+    font-size: 1.2rem;
   }
 }
 

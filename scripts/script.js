@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     offerAnimSwitch = offerBlock.dataset.animated == 'false' ? true : false;
 
     if (document.body.clientWidth > 768) {
-      console.log(offerBlock.getBoundingClientRect().top);
+      // console.log(offerBlock.getBoundingClientRect().top);
       
       if (window.pageYOffset > 97) {
         firstScreenInner.style.paddingTop = '97px';
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       navLinksArray.forEach(function(elem, i, array)  {
-        if (window.pageYOffset > offsetTopsArray[i].offsetTop - 60 && 
+        if (window.pageYOffset > offsetTopsArray[i].offsetTop - 260 && 
           window.pageYOffset < offsetTopsArray[i].offsetTop + (offsetTopsArray[i].offsetHeight / 2)) {
           elem.classList.add("nav-link_active");
           if (array[i+1]) {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
       skillsBorders.forEach(function(elem) {
         elem.classList.add("_border-bottom");
       });
-      skillsBlock.dataset.bordered = 'true';
+      skillsBlock.dataset.animated = 'true';
     }
   });
 
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let href = this.getAttribute('href').substring(1);
 
         const scrollTarget = document.getElementById(href);
-        const topOffset = 50; 
+        const topOffset = 70; 
         const elementPosition = scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 
