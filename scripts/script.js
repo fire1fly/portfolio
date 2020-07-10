@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
     body.classList.toggle("light");
     body.classList.toggle("dark");
     window.addEventListener("scroll", function() {
-      if (window.pageYOffset > 97) {
+      if (window.pageYOffset > 97 && body.classList.contains("dark")) {
         logo.setAttribute('src', 'img/logo-dark.png');
       } else {
         logo.setAttribute('src', 'img/logo.png');
