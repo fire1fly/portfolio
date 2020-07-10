@@ -9,7 +9,7 @@
 
   <title>Laktinov frontend</title>
 </head>
-<body id="body">
+<body id="body" class="light">
   <div class="menuButton__wrap">
     <a class="menuButton ">
       <div class="burger"></div>
@@ -36,6 +36,16 @@
         </div>
         <div class="modalMenu-wrapList__item" data-delay="0.8">
           <a href="#contacts" class="modalMenu-wrapList__link">Контакты</a>
+          <hr class="modalMenu-wrapList__borderBottom">
+        </div>
+        <div class="modalMenu-wrapList__item" data-delay="0.9">
+          <div class="theme-switch-wrapper">
+            <input type="checkbox" id="checkbox" />
+            <label class="theme-switch" for="checkbox">
+              <div class="slider round"></div>
+            </label>
+            <span class="theme-switch__text">Тёмная тема</span>
+          </div>
         </div>
       </div>
     </div>
@@ -81,6 +91,13 @@
                   <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
                 </svg>
               </a>
+              <div class="theme-switch-wrapper">
+                <input type="checkbox" id="checkbox" />
+                <label class="theme-switch" for="checkbox">
+                  <div class="slider round"></div>
+                </label>
+                <span class="theme-switch__text">Тёмная тема</span>
+              </div>
             </nav>
           </div>
         </header><!-- /.header -->
@@ -126,7 +143,7 @@
       <h2 class="section-title projects__title">Проекты</h2>
       <div class="projects-pointer">
         <span class="projects-pointer__text">Наведи на меня</span>
-        <img class="projects-pointer__img" src="img/arrow.png" alt="стрелка arrow">
+        <img class="projects-pointer__img" src="img/arrow.png" alt="стрелка arrow" data-filtered="false">
       </div>
       <div class="projects-blocks">
         <div class="projects-blocks-smalls">
@@ -283,25 +300,25 @@
       <h2 class="section-title about__title">Обо мне</h2>
       <div class="nums" data-counted="false">
         <div class="nums-item">
-          <img class="nums-item-icon" src="img/about/projects.png" alt="Проекты Projects">
+          <img class="nums-item-icon" src="img/about/projects.png" alt="Проекты Projects" data-filtered="false">
           <span class="nums-item-title">Проектов</span>
           <span class="nums-item-divider">/ /</span>
           <span class="nums-item-num" data-num="25">0</span>
         </div><!-- /.nums-item -->
         <div class="nums-item">
-          <img class="nums-item-icon" src="img/about/cup.png" alt="Кофе Coffee">
+          <img class="nums-item-icon" src="img/about/cup.png" alt="Кофе Coffee" data-filtered="false">
           <span class="nums-item-title">Чашек кофе</span>
           <span class="nums-item-divider">/ /</span>
           <span class="nums-item-num" data-num="256">0</span>
         </div><!-- /.nums-item -->
         <div class="nums-item">
-          <img class="nums-item-icon" src="img/about/clients.png" alt="Проекты Projects">
+          <img class="nums-item-icon" src="img/about/clients.png" alt="Проекты Projects" data-filtered="false">
           <span class="nums-item-title">Клиентов</span>
           <span class="nums-item-divider">/ /</span>
           <span class="nums-item-num" data-num="10">0</span>
         </div><!-- /.nums-item -->
         <div class="nums-item">
-          <img class="nums-item-icon" src="img/about/experience.png" alt="Проекты Projects">
+          <img class="nums-item-icon" src="img/about/experience.png" alt="Проекты Projects" data-filtered="false">
           <span class="nums-item-title">Опыт разработки (годы)</span>
           <span class="nums-item-divider">/ /</span>
           <span class="nums-item-num" data-num="3">0</span>
@@ -324,7 +341,7 @@
               </div>
             </div>
           </div>
-          <img class="about-me-shortinfo__img" src="img/about/coding.png" alt="Программирование кодинг сайты">
+          <img class="about-me-shortinfo__img" src="img/about/coding.png" alt="Программирование кодинг сайты" data-filtered="false">
         </div><!-- /.about-me-shortinfo -->
         <div class="about-me-info">
           <div class="about-me-info-detailed">
@@ -356,7 +373,7 @@
       <div class="offer-block" data-animated="false">
         <div class="offer-block__item" data-anim-name="topLeftFade">
           <div class="offer-block-check">
-            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check">
+            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check" data-filtered="false">
           </div>
           <div class="offer-block-info">
             <h3 class="offer-block-info__title">Скорость загрузки</h3>
@@ -365,7 +382,7 @@
         </div><!-- /.offer-block__item -->
         <div class="offer-block__item" data-anim-name="topRightFade">
           <div class="offer-block-check">
-            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check">
+            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check" data-filtered="false">
           </div>
           <div class="offer-block-info">
             <h3 class="offer-block-info__title">Для любого устройства</h3>
@@ -374,7 +391,7 @@
         </div><!-- /.offer-block__item -->
         <div class="offer-block__item" data-anim-name="leftFade">
           <div class="offer-block-check">
-            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check">
+            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check" data-filtered="false">
           </div>
           <div class="offer-block-info">
             <h3 class="offer-block-info__title">Валидность</h3>
@@ -383,7 +400,7 @@
         </div><!-- /.offer-block__item -->
         <div class="offer-block__item" data-anim-name="rightFade">
           <div class="offer-block-check">
-            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check">
+            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check" data-filtered="false">
           </div>
           <div class="offer-block-info">
             <h3 class="offer-block-info__title">SEO</h3>
@@ -392,7 +409,7 @@
         </div><!-- /.offer-block__item -->      
         <div class="offer-block__item" data-anim-name="bottomLeftFade">
           <div class="offer-block-check">
-            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check">
+            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check" data-filtered="false">
           </div>
           <div class="offer-block-info">
             <h3 class="offer-block-info__title">Компетентность</h3>
@@ -401,7 +418,7 @@
         </div><!-- /.offer-block__item -->
         <div class="offer-block__item" data-anim-name="bottomRightFade">
           <div class="offer-block-check">
-            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check">
+            <img class="offer-block-check__img" src="img/check.png" alt="Галочка Check" data-filtered="false">
           </div>
           <div class="offer-block-info">
             <h3 class="offer-block-info__title">Маркетинг</h3>
@@ -417,43 +434,43 @@
       <div class="contacts-wrap">
         <div class="contacts-block">
           <div class="contacts-block__item">
-            <a href="tel:+79501051402" id="contacts-whatsapp" class="contacts-block__link">
+            <a href="tel:+79501051402" id="contacts-whatsapp" class="contacts-block__link" data-filtered="false">
               <div class="contacts-block__icon"></div>
               <span class="contacts-block__text">+7(950)-105-14-02</span>
             </a>
           </div><!-- /.contacts-block__item -->
           <div class="contacts-block__item">
-            <a href="tg:+79501051402" id="contacts-telegram" class="contacts-block__link">
+            <a href="tg:+79501051402" id="contacts-telegram" class="contacts-block__link" data-filtered="false">
               <div class="contacts-block__icon"></div>
               <span class="contacts-block__text">+7(950)-105-14-02</span>
             </a>
           </div><!-- /.contacts-block__item -->
           <div class="contacts-block__item">
-            <a href="https://vk.com/fire1fly" target="_blank" id="contacts-vk" class="contacts-block__link">
+            <a href="https://vk.com/fire1fly" target="_blank" id="contacts-vk" class="contacts-block__link" data-filtered="false">
               <div class="contacts-block__icon"></div>
               <span class="contacts-block__text">Страница Вконтакте</span>
             </a>
           </div><!-- /.contacts-block__item -->
           <div class="contacts-block__item">
-            <a href="https://www.instagram.com/fireofly/" target="_blank" id="contacts-insta" class="contacts-block__link">
+            <a href="https://www.instagram.com/fireofly/" target="_blank" id="contacts-insta" class="contacts-block__link" data-filtered="false">
               <div class="contacts-block__icon"></div>
               <span class="contacts-block__text">Профиль Instagram</span>
             </a>
           </div><!-- /.contacts-block__item -->
           <div class="contacts-block__item">
-            <a href="mailto:laktionoff.dd@gmail.com" id="contacts-gmail" class="contacts-block__link">
+            <a href="mailto:laktionoff.dd@gmail.com" id="contacts-gmail" class="contacts-block__link" data-filtered="false">
               <div class="contacts-block__icon"></div>
               <span class="contacts-block__text">laktionoff.dd@gmail.com</span>
             </a>
           </div><!-- /.contacts-block__item -->
           <div class="contacts-block__item">
-            <a href="skype:+79501051402" id="contacts-skype" class="contacts-block__link">
+            <a href="skype:+79501051402" id="contacts-skype" class="contacts-block__link" data-filtered="false">
               <div class="contacts-block__icon"></div>
               <span class="contacts-block__text">+7(950)-105-14-02</span>
             </a>
           </div><!-- /.contacts-block__item -->
           <div class="contacts-block__item">
-            <a href="https://github.com/fire1fly" target="_blank" id="contacts-github" class="contacts-block__link">
+            <a href="https://github.com/fire1fly" target="_blank" id="contacts-github" class="contacts-block__link" data-filtered="false">
               <div class="contacts-block__icon"></div>
               <span class="contacts-block__text">Профиль GitHub</span>
             </a>

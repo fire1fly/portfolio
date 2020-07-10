@@ -12,6 +12,7 @@
     text-align: center
     font-size: 1.6rem
     font-weight: bold
+    color: rgba(var(--main-color),1)
     &-icon
       margin-bottom: 8px
       width: 50px
@@ -28,9 +29,11 @@
   &__title
     margin-bottom: 50px
   &-me
+    color: rgba(var(--main-color),1)
     &__avatar
       margin-right: 30px
       border-radius: 50%
+      border: 1px solid #fff
     &-shortinfo
       position: relative
       margin-bottom: 50px
@@ -88,6 +91,6 @@
     width: 100%
     margin-top: 8px
     height: 1px
-    background: linear-gradient(to right,$main-text-color 0%, rgba($main-text-color, 0.5), white 100%)
+    background: linear-gradient(to right, rgba(var(--main-color),1) 0%, rgba(var(--main-color), 0.5), rgba(var(--secondary-color),1) 100%)
       
   

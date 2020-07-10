@@ -13,6 +13,7 @@
     font-size: 4rem
     text-transform: uppercase
     letter-spacing: 6px
+    color: $main-text-color
     &__word1
       display: inline-block
       margin-right: 20px
@@ -38,9 +39,21 @@
     left: 0
     top: 0
     width: 100%
-    background-color: #fff
-    box-shadow: 0px 7px 39px -30px rgba(30,31,28,1);
+    background-color: rgba(var(--secondary-color), 1)
+    box-shadow: 0px 7px 39px -30px rgba($main-text-color,1)
     z-index: 3
+    .logo
+      &__link
+        color: rgba(var(--main-color), 1) !important
+    .nav
+      &-link
+        color: rgba(var(--main-color), 1) !important
+        &__svg
+          stroke: rgba(var(--main-color), 1) !important
+        &__active svg
+          stroke: rgba(var(--main-color), 1) !important
+    .theme-switch__text
+      color: rgba(var(--main-color),1)
     .header__inner
       align-items: center
 
@@ -49,7 +62,7 @@
   align-items: center
   &__link
     text-decoration: none
-    color: inherit
+    color: $main-text-color
   &__img
     width: 40px
     height: 40px
@@ -61,7 +74,7 @@
     text-decoration: none
 .nav
   flex-grow: 1
-  max-width: 500px
+  max-width: 640px
   margin-top: 10px
   display: flex
   align-items: center
@@ -69,7 +82,7 @@
   &-link
     position: relative
     font-size: 1.6rem
-    color: inherit
+    color: $main-text-color
     text-decoration: none
     &__svg 
       fill: none
@@ -97,6 +110,51 @@
         stroke-dashoffset: 0
         opacity: 1
         transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+
+.theme-switch 
+  display: inline-block
+  height: 25px
+  position: relative
+  width: 40px
+  margin-right: 5px
+  &-wrapper
+    display: flex
+    align-items: center
+  &__text
+    font-size: 1.6rem
+    color: $main-text-color
+input#checkbox
+  display: none
+
+.slider 
+  background-color: rgba(var(--main-color),1)
+  bottom: 0
+  cursor: pointer
+  left: 0
+  position: absolute
+  right: 0
+  top: 0
+  transition: 0.4s
+  &:before
+    content: ""
+    background-color: rgba(var(--secondary-color),1)
+    bottom: 4px
+    width: 17px
+    height: 17px
+    left: 4px
+    position: absolute
+    transition: 0.4s
+  &.round
+    border-radius: 34px
+    &:before
+      border-radius: 50%
+input#checkbox:checked + .theme-switch > .slider 
+  background-color: rgba(var(--main-color),1)
+input#checkbox:checked + .theme-switch > .slider::before 
+    transform: translateX(16px)
+    background-color: rgba(var(--secondary-color),1)
+
 
 .slideFadeDown
   animation: slideFadeDown 0.2s linear 0s 1 normal forwards

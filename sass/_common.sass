@@ -1,26 +1,40 @@
 *
   box-sizing: border-box
+
+\:root
+  // --main-color: 30,31,28
+  // --secondary-color: 255,255,255
+  // --main-color: 255,255,255
+  // --secondary-color: 30,31,28
+
 html
   font-size: 10px
 body
   position: relative
   +reg-monts
-  color: $main-text-color
+  color: rgba(var(--main-color), 1)
+  background-color: rgba(var(--secondary-color), 1)
+body.light
+  --main-color: 30,31,28
+  --secondary-color: 255,255,255
+body.dark
+  --main-color: 255,255,255
+  --secondary-color: 30,31,28
 a
   color: inherit
 
 input:focus, button:focus, textarea:focus
   outline: none
 
-div, img, p, a, span, strong, b, h1, h2, h3, h4
-  &::selection
-    color: #fff
-    background-color: rgba($main-text-color, 0.8)
+::selection
+  color: rgba(var(--secondary-color), 1)
+  background-color: rgba( var(--main-color) , 0.8)
 
 .container, .fluid-container
   max-width: 1200px
   margin: 0 auto
   z-index: 1
+
 
 .section
   padding: 50px 0
@@ -28,6 +42,7 @@ div, img, p, a, span, strong, b, h1, h2, h3, h4
     margin: 0
     font-size: 3rem
     text-align: center
+    color: rgba(var(--main-color),1)
 
 .menuButton
   display: none
@@ -111,21 +126,6 @@ div, img, p, a, span, strong, b, h1, h2, h3, h4
     background: #fff
     transition: all .3s ease
     transform: rotate(-45deg)
-.navigate
-  position: absolute
-  display: block
-  background: rgba($main-text-color, 0.9)
-  padding: 0 15px
-  height: 53px
-  line-height: 51px
-  top: -1px
-  right: -170px
-  font-size: 1em
-  color: #fff
-  border: 1px solid #fff
-  border-top-left-radius: 20px
-  border-bottom-left-radius: 20px
-  transition: all .4s ease
 
 .scrollHide
   overflow: hidden
@@ -159,7 +159,7 @@ div, img, p, a, span, strong, b, h1, h2, h3, h4
       margin: 25px auto 0
       padding: 0
       background: #fff
-      background: linear-gradient(to right,rgba(255,255,255,0) 0%,white 20%,white 100%)
+      background: linear-gradient(to right, rgba(255,255,255, 0.3) 0%, #fff 20%, #fff 100%)
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff',endColorstr='#ffffff',GradientType=1)
       opacity: .3
       transition: all .4s ease
@@ -170,6 +170,11 @@ div, img, p, a, span, strong, b, h1, h2, h3, h4
       letter-spacing: 1px
       text-transform: uppercase
       opacity: 0
+      .theme-switch
+        &__text
+          color: #fff
+      input#checkbox:checked + .theme-switch > .slider::before 
+        transform: translateX(7px)
     &__link
       text-decoration: none
       color: #fff
@@ -184,6 +189,7 @@ div, img, p, a, span, strong, b, h1, h2, h3, h4
   animation-timing-function: linear
   animation-direction: normal
   animation-fill-mode: forwards
+
 @keyframes fadeLeftMenu
   0%
     opacity: 0

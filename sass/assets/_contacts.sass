@@ -7,11 +7,13 @@
     margin-bottom: 40px
     font-size: 1.6rem
     text-align: center
+    color: rgba(var(--main-color),1)
   &-wrap
     display: flex
     justify-content: space-between
   &-block
     width: 30%
+    color: rgba(var(--main-color),1)
     &__item
       margin-bottom: 30px
     &__icon
@@ -27,51 +29,81 @@
         text-decoration: underline
 
 #contacts
-  &-whatsapp
+  &-whatsapp[data-filtered="false"]
     .contacts-block__icon
-      background: #fff url('../img/contacts/whatsapp.png')
+      background: transparent url('../img/contacts/whatsapp.png')
       background-size: 100%
     &:hover
       .contacts-block__icon
         background-image: url('../img/contacts/whatsapp-active.png')
-  &-telegram
+  &-telegram[data-filtered="false"]
     .contacts-block__icon
-      background: #fff url('../img/contacts/telegram.png')
+      background: transparent url('../img/contacts/telegram.png')
       background-size: 100%
     &:hover
       .contacts-block__icon
         background-image: url('../img/contacts/telegram-active.png')
-  &-vk
+  &-vk[data-filtered="false"]
     .contacts-block__icon
-      background: #fff url('../img/contacts/vk.png')
+      background: transparent url('../img/contacts/vk.png')
       background-size: 100%
     &:hover
       .contacts-block__icon
         background-image: url('../img/contacts/vk-active.png')
-  &-insta
+  &-insta[data-filtered="false"]
     .contacts-block__icon
-      background: #fff url('../img/contacts/instagram.png')
+      background: transparent url('../img/contacts/instagram.png')
       background-size: 100%
     &:hover
       .contacts-block__icon
         background-image: url('../img/contacts/instagram-active.png')
-  &-gmail
+  &-gmail[data-filtered="false"]
     .contacts-block__icon
-      background: #fff url('../img/contacts/gmail.png')
+      background: transparent url('../img/contacts/gmail.png')
       background-size: 100%
     &:hover
       .contacts-block__icon
         background-image: url('../img/contacts/gmail-active.png')
-  &-skype
+  &-skype[data-filtered="false"]
     .contacts-block__icon
-      background: #fff url('../img/contacts/skype.png')
+      background: transparent url('../img/contacts/skype.png')
       background-size: 100%
     &:hover
       .contacts-block__icon
         background-image: url('../img/contacts/skype-active.png')
-  &-github
+  &-github[data-filtered="false"]
     .contacts-block__icon
-      background: #fff url('../img/contacts/github.png')
+      background: transparent url('../img/contacts/github.png')
+      background-size: 100%
+    
+#contacts
+  &-whatsapp[data-filtered="true"]
+    .contacts-block__icon
+      background: transparent url('../img/contacts/whatsapp-active.png')
+      background-size: 100%
+  &-telegram[data-filtered="true"]
+    .contacts-block__icon
+      background: transparent url('../img/contacts/telegram-active.png')
+      background-size: 100%
+  &-vk[data-filtered="true"]
+    .contacts-block__icon
+      background: transparent url('../img/contacts/vk-active.png')
+      background-size: 100%
+  &-insta[data-filtered="true"]
+    .contacts-block__icon
+      background: transparent url('../img/contacts/instagram-active.png')
+      background-size: 100%
+  &-gmail[data-filtered="true"]
+    .contacts-block__icon
+      background: transparent url('../img/contacts/gmail-active.png')
+      background-size: 100%
+  &-skype[data-filtered="true"]
+    .contacts-block__icon
+      background: transparent url('../img/contacts/skype-active.png')
+      background-size: 100%
+  &-github[data-filtered="true"]
+    .contacts-block__icon
+      background: transparent url('../img/contacts/github-active.png')
       background-size: 100%
 
 .feedback
@@ -84,6 +116,8 @@
     width: 100%
     height: 40px
     font-size: 1.4rem
+    background-color: #fff
+    color: rgba(var(--main-color),1)
     border: 1px solid rgba($main-text-color, 0.3)
     &::placeholder
       font-size: 1.2rem
@@ -95,9 +129,7 @@
     width: 150px
     height: 40px
     font-size: 1.4rem
-    background-color: $main-text-color
     cursor: pointer
     border: none
-    color: #fff
-    &:hover
-      background-color: #000
+    background-color: rgba(var(--main-color), 0.9)
+    color: rgba(var(--secondary-color), 1)

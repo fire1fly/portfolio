@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         offerBlockItems = document.querySelectorAll(".offer-block__item"),
         delayList = document.querySelectorAll(".delay");
 
+  
 
   // data
         
@@ -26,7 +27,17 @@ document.addEventListener("DOMContentLoaded", function() {
         modalMenuItemsArray = Array.prototype.slice.call(modalMenuItems),
         navLinksArray = Array.prototype.slice.call(navLinks),
         offsetTopsArray = Array.prototype.slice.call(offsetTopsElems);
+
   let countSwitch, skillsBorderSwitch, offerAnimSwitch;
+
+  // elems for theme
+
+  const themeSwitch = document.querySelector(".theme-switch"),
+        themeSwitchText = document.querySelector(".theme-switch__text"),
+        logo = document.querySelector(".logo__img"),
+        imgList = document.querySelectorAll('img[data-filtered="false"]'),
+        conactsIcons = document.querySelectorAll(".contacts-block__link"),
+        feedbackInputs = document.querySelectorAll(".feedback-input");
 
   // funcs
 
@@ -146,5 +157,41 @@ document.addEventListener("DOMContentLoaded", function() {
             behavior: 'smooth'
         });
     });
+  });
+
+  themeSwitch.addEventListener("click", function() {
+    body.classList.toggle("light");
+    body.classList.toggle("dark");
+    window.addEventListener("scroll", function() {
+      if (window.pageYOffset > 97) {
+        logo.setAttribute('src', 'img/logo-dark.png');
+      } else {
+        logo.setAttribute('src', 'img/logo.png');
+      }
+    });
+    if (body.classList.contains("dark")) {
+      themeSwitchText.textContent = 'Светлая тема';
+      imgList.forEach(function(elem) {
+        elem.style.filter = 'invert(100%)';
+      });
+      conactsIcons.forEach(function(elem) {
+        elem.dataset.filtered = "true";
+      });
+      feedbackInputs.forEach(function(elem) {
+        elem.style.backgroundColor = '#0C0C0B'
+      });
+    } else {
+      themeSwitchText.textContent = 'Тёмная тема';
+      imgList.forEach(function(elem) {
+        elem.style.filter = 'invert(0)';
+      });
+      conactsIcons.forEach(function(elem) {
+        elem.dataset.filtered = "false";
+      });
+      feedbackInputs.forEach(function(elem) {
+        elem.style.backgroundColor = '#fff'
+      });
+    }
+
   });
 });
