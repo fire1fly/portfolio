@@ -1029,6 +1029,11 @@ div::selection, img::selection, p::selection, a::selection, span::selection, str
   background-image: url("../img/contacts/skype-active.png");
 }
 
+#contacts-github .contacts-block__icon {
+  background: #fff url("../img/contacts/github.png");
+  background-size: 100%;
+}
+
 .feedback__wrap {
   width: 40%;
 }
