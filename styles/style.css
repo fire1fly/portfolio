@@ -225,7 +225,7 @@ input:focus, button:focus, textarea:focus {
   color: #fff;
 }
 
-.modalMenu-wrapList__item input#checkbox:checked + .theme-switch > .slider::before {
+.modalMenu-wrapList__item input#checkbox_modalMenu:checked + .theme-switch > .slider::before {
   transform: translateX(7px);
 }
 
