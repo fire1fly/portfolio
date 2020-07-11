@@ -40,11 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const themeSwitchNav = document.querySelector("#themeSwitchNav"),
         themeSwitchModalMenu = document.querySelector("#themeSwitchModalMenu"),
-        themeSwitchText = document.querySelector(".theme-switch__text"),
+        themeSwitchTextModal = document.querySelector(".theme-switch__textModal"),
+        themeSwitchTextNav = document.querySelector(".theme-switch__textNav"),
         logo = document.querySelector(".logo__img"),
         imgList = document.querySelectorAll('img[data-filtered="false"]'),
         conactsIcons = document.querySelectorAll(".contacts-block__link"),
         feedbackInputs = document.querySelectorAll(".feedback-input");
+
+        console.log(themeSwitchTextNav);
 
   // funcs
 
@@ -72,7 +75,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
     if (body.classList.contains("dark")) {
-      themeSwitchText.textContent = 'Светлая тема';
+      themeSwitchTextModal.textContent = 'Светлая тема';
+      themeSwitchTextNav.textContent = 'Светлая тема';
       imgList.forEach(function(elem) {
         elem.style.filter = 'invert(100%)';
       });
@@ -83,7 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
         elem.style.backgroundColor = '#0C0C0B'
       });
     } else {
-      themeSwitchText.textContent = 'Тёмная тема';
+      themeSwitchTextModal.textContent = 'Тёмная тема';
+      themeSwitchTextNav.textContent = 'Тёмная тема';
       imgList.forEach(function(elem) {
         elem.style.filter = 'invert(0)';
       });
