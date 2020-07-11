@@ -263,7 +263,15 @@ input:focus, button:focus, textarea:focus {
   opacity: 0;
 }
 
-.modalMenu-wrapList__item .theme-switch__text {
+.modalMenu-wrapList__item .theme-switch-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modalMenu-wrapList__item .theme-switch__textModal {
+  margin-bottom: 8px;
   color: #fff;
 }
 
@@ -463,7 +471,7 @@ input:focus, button:focus, textarea:focus {
   stroke: rgba(var(--main-color), 1) !important;
 }
 
-.header-scroll .theme-switch__text {
+.header-scroll .theme-switch__textNav {
   color: rgba(var(--main-color), 1);
 }
 
@@ -579,7 +587,7 @@ input:focus, button:focus, textarea:focus {
           align-items: center;
 }
 
-.theme-switch__textNav, .theme-switch .theme-switch__textModal {
+.theme-switch__textNav {
   font-size: 1.6rem;
   color: #1E1F1C;
 }
