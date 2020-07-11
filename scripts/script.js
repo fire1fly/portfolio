@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // elems for theme
 
-  const themeSwitch = document.querySelector(".theme-switch"),
+  const themeSwitchNav = document.querySelector("#themeSwitchNav"),
+        themeSwitchModalMenu = document.querySelector("#themeSwitchModalMenu"),
         themeSwitchText = document.querySelector(".theme-switch__text"),
         logo = document.querySelector(".logo__img"),
         imgList = document.querySelectorAll('img[data-filtered="false"]'),
@@ -53,6 +54,41 @@ document.addEventListener("DOMContentLoaded", function() {
     let delayValue = elem.dataset.delay;
     elem.style.animationDelay = delayValue + 's';
   });
+
+  const themeSwitcher = () => {
+    body.classList.toggle("light");
+    body.classList.toggle("dark");
+    window.addEventListener("scroll", function() {
+      if (window.pageYOffset > 97 && body.classList.contains("dark")) {
+        logo.setAttribute('src', 'img/logo-dark.png');
+      } else {
+        logo.setAttribute('src', 'img/logo.png');
+      }
+    });
+    if (body.classList.contains("dark")) {
+      themeSwitchText.textContent = 'Светлая тема';
+      imgList.forEach(function(elem) {
+        elem.style.filter = 'invert(100%)';
+      });
+      conactsIcons.forEach(function(elem) {
+        elem.dataset.filtered = "true";
+      });
+      feedbackInputs.forEach(function(elem) {
+        elem.style.backgroundColor = '#0C0C0B'
+      });
+    } else {
+      themeSwitchText.textContent = 'Тёмная тема';
+      imgList.forEach(function(elem) {
+        elem.style.filter = 'invert(0)';
+      });
+      conactsIcons.forEach(function(elem) {
+        elem.dataset.filtered = "false";
+      });
+      feedbackInputs.forEach(function(elem) {
+        elem.style.backgroundColor = '#fff'
+      });
+    }
+  };
 
   // calls and events
 
@@ -159,39 +195,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-  themeSwitch.addEventListener("click", function() {
-    body.classList.toggle("light");
-    body.classList.toggle("dark");
-    window.addEventListener("scroll", function() {
-      if (window.pageYOffset > 97 && body.classList.contains("dark")) {
-        logo.setAttribute('src', 'img/logo-dark.png');
-      } else {
-        logo.setAttribute('src', 'img/logo.png');
-      }
-    });
-    if (body.classList.contains("dark")) {
-      themeSwitchText.textContent = 'Светлая тема';
-      imgList.forEach(function(elem) {
-        elem.style.filter = 'invert(100%)';
-      });
-      conactsIcons.forEach(function(elem) {
-        elem.dataset.filtered = "true";
-      });
-      feedbackInputs.forEach(function(elem) {
-        elem.style.backgroundColor = '#0C0C0B'
-      });
-    } else {
-      themeSwitchText.textContent = 'Тёмная тема';
-      imgList.forEach(function(elem) {
-        elem.style.filter = 'invert(0)';
-      });
-      conactsIcons.forEach(function(elem) {
-        elem.dataset.filtered = "false";
-      });
-      feedbackInputs.forEach(function(elem) {
-        elem.style.backgroundColor = '#fff'
-      });
-    }
-
-  });
+  themeSwitchNav.addEventListener("click", themeSwitcher);
+  themeSwitchModalMenu.addEventListener("click", themeSwitcher);
 });

@@ -173,7 +173,9 @@ input:focus, button:focus, textarea:focus
       .theme-switch
         &__text
           color: #fff
-      input#checkbox_modalMenu:checked + .theme-switch > .slider::before 
+      input#checkboxModalMenu
+        display: none
+      input#checkboxModalMenu:checked + .theme-switch > .slider::before 
         transform: translateX(7px)
     &__link
       text-decoration: none

@@ -225,7 +225,11 @@ input:focus, button:focus, textarea:focus {
   color: #fff;
 }
 
-.modalMenu-wrapList__item input#checkbox_modalMenu:checked + .theme-switch > .slider::before {
+.modalMenu-wrapList__item input#checkboxModalMenu {
+  display: none;
+}
+
+.modalMenu-wrapList__item input#checkboxModalMenu:checked + .theme-switch > .slider::before {
   transform: translateX(7px);
 }
 
@@ -453,7 +457,7 @@ input:focus, button:focus, textarea:focus {
   color: #1E1F1C;
 }
 
-input#checkbox {
+input#checkboxNav {
   display: none;
 }
 
@@ -487,11 +491,11 @@ input#checkbox {
   border-radius: 50%;
 }
 
-input#checkbox:checked + .theme-switch > .slider {
+input#checkboxNav:checked + .theme-switch > .slider {
   background-color: rgba(var(--main-color), 1);
 }
 
-input#checkbox:checked + .theme-switch > .slider::before {
+input#checkboxNav:checked + .theme-switch > .slider::before {
   transform: translateX(16px);
   background-color: rgba(var(--secondary-color), 1);
 }

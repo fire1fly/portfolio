@@ -929,6 +929,9 @@ img {
   .step::before {
     display: none;
   }
+  .reviews {
+    display: none;
+  } 
 }
 
 .reviews-slider {

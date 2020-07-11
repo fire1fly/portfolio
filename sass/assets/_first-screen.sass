@@ -124,7 +124,7 @@
   &__text
     font-size: 1.6rem
     color: $main-text-color
-input#checkbox
+input#checkboxNav
   display: none
 
 .slider 
@@ -149,9 +149,9 @@ input#checkbox
     border-radius: 34px
     &:before
       border-radius: 50%
-input#checkbox:checked + .theme-switch > .slider 
+input#checkboxNav:checked + .theme-switch > .slider 
   background-color: rgba(var(--main-color),1)
-input#checkbox:checked + .theme-switch > .slider::before 
+input#checkboxNav:checked + .theme-switch > .slider::before 
     transform: translateX(16px)
     background-color: rgba(var(--secondary-color),1)
 
