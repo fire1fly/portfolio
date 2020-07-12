@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   // lazy loading init
 
-  var bLazy = new Blazy({breakpoints: [{width: 425, src: 'data-src-small'},{width: 1200, src: 'data-src-medium'}]});
+  var bLazy = new Blazy();
 
   // elems
   const body = document.querySelector('#body'),
@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
         headerContainer = document.querySelector(".header"),
         navLinks = document.querySelectorAll(".nav-link"),
         firstScreenInner = document.querySelector(".first-screen__inner"),
-        projectsBlock = document.querySelector(".projects"),
+        projectsBlocks = document.querySelector(".projects-blocks"),
+        projectsBtn = document.querySelector(".projects-btn"),
         numsBlock = document.querySelector(".nums"),
         aboutMeBlock = document.querySelector(".about-me"),
         numsItemNum = document.querySelectorAll(".nums-item-num"),
@@ -25,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
         offerBlockItems = document.querySelectorAll(".offer-block__item"),
         delayList = document.querySelectorAll(".delay");
 
-  
 
   // data
         
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         navLinksArray = Array.prototype.slice.call(navLinks),
         offsetTopsArray = Array.prototype.slice.call(offsetTopsElems);
 
-  let countSwitch, skillsBorderSwitch, offerAnimSwitch;
+  let countSwitch, skillsBorderSwitch, offerAnimSwitch, projectSlideSwitch;
 
   // elems for theme
 
@@ -46,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
         imgList = document.querySelectorAll('img[data-filtered="false"]'),
         conactsIcons = document.querySelectorAll(".contacts-block__link"),
         feedbackInputs = document.querySelectorAll(".feedback-input");
-
-        console.log(themeSwitchTextNav);
 
   // funcs
 
@@ -98,6 +96,26 @@ document.addEventListener("DOMContentLoaded", function() {
       feedbackInputs.forEach(function(elem) {
         elem.style.backgroundColor = '#fff'
       });
+    }
+  };
+
+  const projectsSlideSwitch = () => {
+    let bodyWidth = document.body.clientWidth;
+    typeSreenAnim = (bodyWidth <= 425)   ? 'xsm' :
+                    (bodyWidth <= 576)   ? 'sm'  :
+                    (bodyWidth <= 768)  ? 'smd' :
+                    (bodyWidth <= 992)  ? 'md'  :
+                    (bodyWidth <= 1200) ? 'lg'  : 'xl';
+                    
+    projectSlideSwitch = projectsBlocks.dataset.slided == 'false' ? true : false;
+    if(projectSlideSwitch) {
+      projectsBlocks.style.animationName = `pSlideDown-${typeSreenAnim}`;
+      projectsBlocks.dataset.slided = 'true';
+      projectsBtn.textContent = 'Скрыть';
+    } else {
+      projectsBlocks.style.animationName = `pSlideUp-${typeSreenAnim}`;
+      projectsBlocks.dataset.slided = 'false';
+      projectsBtn.textContent = 'Показать больше';
     }
   };
 
@@ -207,5 +225,6 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   themeSwitchNav.addEventListener("click", themeSwitcher);
-  themeSwitchModalMenu.addEventListener("click", themeSwitcher);
+  themeSwitchModalMenu.addEventListener("click", themeSwitcher); 
+  projectsBtn.addEventListener("click", projectsSlideSwitch);
 });
