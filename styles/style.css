@@ -388,7 +388,7 @@ input:focus, button:focus, textarea:focus {
 
 .first-screen {
   height: 600px;
-  background: #E6E2E1 url("../img/first-screen-bg.jpg");
+  background: #E6E2E1 url("../img/first-screen-bg.webp");
   background-size: cover;
   background-position-y: -500px;
 }
